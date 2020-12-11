@@ -3,7 +3,7 @@
 #Max Starreveld
 
 loop=true
-while loop;
+while [ "$loop" = true ];
 do
 	echo "You can: 1 - Add a car, 2 - Display list of cars, or 3 - Quit and exit"
 	read -r INPUT
@@ -16,7 +16,7 @@ do
 			read -r make
 			echo "Enter model:"
 			read -r model
-			carString=$carString$year":"$make":"$model
+			carString="$carString$year:$make:$model"
 			echo "$carString" >> my_old_cars
 			;;
 		2)
